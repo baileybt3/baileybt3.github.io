@@ -1,0 +1,382 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Brandon Bailey — Projects & Blog</title>
+  <meta name="description" content="Brandon Bailey’s portfolio: game dev, AI/ML, and robotics projects, plus a developer blog." />
+  <meta name="author" content="Brandon Bailey" />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='0.9em' font-size='90'>🕹️</text></svg>">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Brandon Bailey — Projects & Blog" />
+  <meta property="og:description" content="Game dev & AI projects. Writing about learning in public." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://example.com" />
+
+  <!-- JSON-LD: Person + Website -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Brandon Bailey",
+    "url": "https://example.com",
+    "sameAs": [
+      "https://github.com/baileybt3",
+      "https://github.com/bbaile32-uncc"
+    ]
+  }
+  </script>
+
+  <!-- Tailwind CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    // Tailwind config (optional font sizing adjustments)
+    tailwind.config = { theme: { extend: { fontFamily: { display: ["Inter", "ui-sans-serif", "system-ui"], body: ["Inter", "ui-sans-serif", "system-ui"] } } } }
+  </script>
+  <style>
+    html { scroll-behavior: smooth; }
+    .prose a { text-decoration: underline; }
+  </style>
+</head>
+<body class="bg-neutral-50 text-neutral-900 dark:bg-neutral-950 dark:text-neutral-100">
+  <!-- Site Wrapper -->
+  <div class="min-h-screen flex flex-col">
+    <!-- Navbar -->
+    <header class="sticky top-0 z-50 backdrop-blur supports-[backdrop-filter]:bg-white/70 bg-white/90 dark:bg-neutral-950/90 border-b border-neutral-200 dark:border-neutral-800">
+      <nav class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+        <a href="#home" class="font-semibold tracking-tight">Brandon Bailey</a>
+        <div class="hidden sm:flex gap-6 text-sm">
+          <a href="#projects" class="hover:opacity-80">Projects</a>
+          <a href="#blog" class="hover:opacity-80">Blog</a>
+          <a href="#about" class="hover:opacity-80">About</a>
+          <a href="#contact" class="hover:opacity-80">Contact</a>
+        </div>
+        <div class="flex items-center gap-2">
+          <button id="themeToggle" class="rounded-xl border border-neutral-300 dark:border-neutral-700 px-3 py-1 text-xs hover:bg-neutral-100 dark:hover:bg-neutral-800 transition">Toggle Theme</button>
+          <a href="/rss.xml" class="hidden sm:inline rounded-xl border border-neutral-300 dark:border-neutral-700 px-3 py-1 text-xs hover:bg-neutral-100 dark:hover:bg-neutral-800 transition">RSS</a>
+        </div>
+      </nav>
+    </header>
+
+    <!-- Hero -->
+    <section id="home" data-animate class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8 py-16">
+      <div class="grid md:grid-cols-2 gap-10 items-center">
+        <div>
+          <h1 class="text-3xl sm:text-4xl md:text-5xl font-extrabold leading-tight">Building games, bots, and tools — and writing what I learn.</h1>
+          <p class="mt-4 text-neutral-600 dark:text-neutral-300">CS senior @ UNC Charlotte. Game dev with Unity/C#, AI/ML with Python. I ship projects and share the process.</p>
+          <div class="mt-6 flex gap-3">
+            <a href="#projects" class="inline-block rounded-2xl bg-black text-white dark:bg-white dark:text-black px-4 py-2 text-sm font-medium shadow hover:opacity-90 transition-transform will-change-transform hover:-translate-y-0.5">See Projects</a>
+            <a href="#blog" class="inline-block rounded-2xl border border-neutral-300 dark:border-neutral-700 px-4 py-2 text-sm font-medium hover:bg-neutral-100 dark:hover:bg-neutral-800 transition-colors">Read Blog</a>
+          </div>
+          <ul class="mt-6 text-sm text-neutral-600 dark:text-neutral-300 list-disc pl-5 space-y-1">
+            <li>Unity/C#, .NET 9 • Python/ML • ROS2</li>
+            <li>Garry’s Mod (Lua) • OBS automations • GitHub Actions</li>
+            <li>Mapping Charlotte with GIS • Streaming idle game maps</li>
+          </ul>
+        </div>
+        <div class="relative">
+          <div class="aspect-video rounded-2xl bg-gradient-to-br from-neutral-200 to-neutral-100 dark:from-neutral-800 dark:to-neutral-900 shadow-inner flex items-center justify-center overflow-hidden">
+            <div class="text-center p-6">
+              <p class="text-xs uppercase tracking-widest text-neutral-500">Featured</p>
+              <h2 class="text-xl font-semibold mt-2">Counter-Strike AI Bot Stream</h2>
+              <p class="text-sm text-neutral-600 dark:text-neutral-300 mt-2">24/7 stream with navmesh bots, training loops, camera auto-switching, and crash recovery.</p>
+              <div class="mt-4 flex gap-3 justify-center">
+                <a class="text-sm underline" href="#projects">Details</a>
+                <a class="text-sm underline" href="#blog">Devlog</a>
+              </div>
+            </div>
+            <div aria-hidden class="absolute -bottom-20 -right-20 w-80 h-80 rounded-full blur-3xl opacity-40 bg-gradient-to-tr from-fuchsia-500 to-cyan-400 dark:from-indigo-500 dark:to-emerald-400 animate-float"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Projects -->
+    <section id="projects" data-animate class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8 py-10">
+      <div class="flex items-end justify-between">
+        <h3 class="text-2xl font-bold">Projects</h3>
+        <a class="text-sm underline" href="https://github.com/baileybt3" target="_blank" rel="noopener">GitHub</a>
+      </div>
+      <div class="mt-6 grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        <!-- Project Card -->
+        <article class="rounded-2xl border border-neutral-200 dark:border-neutral-800 p-5 hover:shadow-lg transition bg-white dark:bg-neutral-950">
+          <div class="text-xs text-neutral-500">Unity / C#</div>
+          <h4 class="mt-1 text-lg font-semibold">Crossfire5K</h4>
+          <p class="mt-2 text-sm text-neutral-600 dark:text-neutral-300">2.5D arena shooter. State-based enemies, wave & ticket systems. Solo-built, repo managed with clean commits.</p>
+          <ul class="mt-3 flex gap-2 text-xs text-neutral-600 dark:text-neutral-300 flex-wrap">
+            <li class="rounded-full border px-2 py-0.5">Unity</li>
+            <li class="rounded-full border px-2 py-0.5">C#</li>
+            <li class="rounded-full border px-2 py-0.5">NavMesh</li>
+          </ul>
+          <div class="mt-4 flex gap-3">
+            <a class="text-sm underline" href="#">Demo</a>
+            <a class="text-sm underline" href="#">Code</a>
+          </div>
+        </article>
+
+        <article class="rounded-2xl border border-neutral-200 dark:border-neutral-800 p-5 hover:shadow-lg transition bg-white dark:bg-neutral-950">
+          <div class="text-xs text-neutral-500">Unity / C#</div>
+          <h4 class="mt-1 text-lg font-semibold">Defcon: Outbreak</h4>
+          <p class="mt-2 text-sm text-neutral-600 dark:text-neutral-300">Low-poly FPS zombie survival. Waves, tickets, and NavMesh AI. Capstone-ready showcase.</p>
+          <ul class="mt-3 flex gap-2 text-xs text-neutral-600 dark:text-neutral-300 flex-wrap">
+            <li class="rounded-full border px-2 py-0.5">Unity</li>
+            <li class="rounded-full border px-2 py-0.5">C#</li>
+            <li class="rounded-full border px-2 py-0.5">AI</li>
+          </ul>
+          <div class="mt-4 flex gap-3">
+            <a class="text-sm underline" href="#">Demo</a>
+            <a class="text-sm underline" href="#">Code</a>
+          </div>
+        </article>
+
+        <article class="rounded-2xl border border-neutral-200 dark:border-neutral-800 p-5 hover:shadow-lg transition bg-white dark:bg-neutral-950">
+          <div class="text-xs text-neutral-500">Garry’s Mod / Lua</div>
+          <h4 class="mt-1 text-lg font-semibold">CS AI Bot Stream</h4>
+          <p class="mt-2 text-sm text-neutral-600 dark:text-neutral-300">Reinforcement-style loop with navmesh pathing, logging, auto camera, and watchdog restarts.</p>
+          <ul class="mt-3 flex gap-2 text-xs text-neutral-600 dark:text-neutral-300 flex-wrap">
+            <li class="rounded-full border px-2 py-0.5">Lua</li>
+            <li class="rounded-full border px-2 py-0.5">OBS</li>
+            <li class="rounded-full border px-2 py-0.5">Bash</li>
+          </ul>
+          <div class="mt-4 flex gap-3">
+            <a class="text-sm underline" href="#">Demo</a>
+            <a class="text-sm underline" href="#">Code</a>
+          </div>
+        </article>
+
+        <article class="rounded-2xl border border-neutral-200 dark:border-neutral-800 p-5 hover:shadow-lg transition bg-white dark:bg-neutral-950">
+          <div class="text-xs text-neutral-500">Unity / C#</div>
+          <h4 class="mt-1 text-lg font-semibold">Counterfeit</h4>
+          <p class="mt-2 text-sm text-neutral-600 dark:text-neutral-300">Resource management prototype. Systems-first, UI-lite, designed for iterative live streams.</p>
+          <ul class="mt-3 flex gap-2 text-xs text-neutral-600 dark:text-neutral-300 flex-wrap">
+            <li class="rounded-full border px-2 py-0.5">Unity</li>
+            <li class="rounded-full border px-2 py-0.5">C#</li>
+          </ul>
+          <div class="mt-4 flex gap-3">
+            <a class="text-sm underline" href="#">Demo</a>
+            <a class="text-sm underline" href="#">Code</a>
+          </div>
+        </article>
+
+        <article class="rounded-2xl border border-neutral-200 dark:border-neutral-800 p-5 hover:shadow-lg transition bg-white dark:bg-neutral-950">
+          <div class="text-xs text-neutral-500">Python / ML</div>
+          <h4 class="mt-1 text-lg font-semibold">RLCS Outcome Model</h4>
+          <p class="mt-2 text-sm text-neutral-600 dark:text-neutral-300">Logistic regression on Rocket League match data. Train/validate/test across 2022–2024.</p>
+          <ul class="mt-3 flex gap-2 text-xs text-neutral-600 dark:text-neutral-300 flex-wrap">
+            <li class="rounded-full border px-2 py-0.5">Python</li>
+            <li class="rounded-full border px-2 py-0.5">pandas</li>
+            <li class="rounded-full border px-2 py-0.5">scikit-learn</li>
+          </ul>
+          <div class="mt-4 flex gap-3">
+            <a class="text-sm underline" href="#">Report</a>
+            <a class="text-sm underline" href="#">Code</a>
+          </div>
+        </article>
+
+        <article class="rounded-2xl border border-neutral-200 dark:border-neutral-800 p-5 hover:shadow-lg transition bg-white dark:bg-neutral-950">
+          <div class="text-xs text-neutral-500">Unity / GIS</div>
+          <h4 class="mt-1 text-lg font-semibold">UptownRP (Charlotte)</h4>
+          <p class="mt-2 text-sm text-neutral-600 dark:text-neutral-300">Low-poly Charlotte map with GIS tiles; scalable import pipeline and perf-minded tooling.</p>
+          <ul class="mt-3 flex gap-2 text-xs text-neutral-600 dark:text-neutral-300 flex-wrap">
+            <li class="rounded-full border px-2 py-0.5">Unity</li>
+            <li class="rounded-full border px-2 py-0.5">GIS</li>
+          </ul>
+          <div class="mt-4 flex gap-3">
+            <a class="text-sm underline" href="#">Demo</a>
+            <a class="text-sm underline" href="#">Code</a>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- Blog -->
+    <section id="blog" data-animate class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8 py-10">
+      <div class="flex items-end justify-between">
+        <h3 class="text-2xl font-bold">Latest writing</h3>
+        <a class="text-sm underline" href="#">All posts</a>
+      </div>
+      <div class="mt-6 grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        <article class="rounded-2xl border border-neutral-200 dark:border-neutral-800 p-5 bg-white dark:bg-neutral-950 hover:shadow-lg transition">
+          <p class="text-xs text-neutral-500">Devlog • Oct 2025</p>
+          <h4 class="mt-1 text-lg font-semibold"><a class="underline" href="#">Training loops that don’t crash at 3am</a></h4>
+          <p class="mt-2 text-sm text-neutral-600 dark:text-neutral-300">Notes on watchdog scripts, safe reloads, and logging for a 24/7 AI bot stream.</p>
+        </article>
+        <article class="rounded-2xl border border-neutral-200 dark:border-neutral-800 p-5 bg-white dark:bg-neutral-950 hover:shadow-lg transition">
+          <p class="text-xs text-neutral-500">Design • Sep 2025</p>
+          <h4 class="mt-1 text-lg font-semibold"><a class="underline" href="#">Enemy state machines in Crossfire5K</a></h4>
+          <p class="mt-2 text-sm text-neutral-600 dark:text-neutral-300">How I keep logic simple enough to ship but flexible enough to iterate fast.</p>
+        </article>
+        <article class="rounded-2xl border border-neutral-200 dark:border-neutral-800 p-5 bg-white dark:bg-neutral-950 hover:shadow-lg transition">
+          <p class="text-xs text-neutral-500">How‑to • Sep 2025</p>
+          <h4 class="mt-1 text-lg font-semibold"><a class="underline" href="#">Importing Charlotte into Unity with tiles</a></h4>
+          <p class="mt-2 text-sm text-neutral-600 dark:text-neutral-300">A practical pipeline for GIS data → Unity prefabs, tuned for performance.</p>
+        </article>
+      </div>
+    </section>
+
+    <!-- About -->
+    <section id="about" data-animate class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8 py-10">
+      <h3 class="text-2xl font-bold">About</h3>
+      <div class="mt-4 prose prose-neutral dark:prose-invert">
+        <p>Hi! I’m Brandon — a CS senior graduating Dec 2025. I build game systems, AI bots, and small tools that make streams and dev workflows more fun. I write short, useful posts so future‑me (and maybe you) can move faster next time.</p>
+        <p>Currently reading: <em>C# 13 and .NET 9</em>. Training plan: daily code + Rocket League drills. 🎯</p>
+      </div>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact" data-animate class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8 py-10">
+      <h3 class="text-2xl font-bold">Contact</h3>
+      <div class="mt-4 text-sm">
+        <p>Email: <a class="underline" href="mailto:brandon@example.com">brandon@example.com</a></p>
+        <p class="mt-2">Elsewhere: <a class="underline" href="https://github.com/baileybt3" target="_blank" rel="noopener">GitHub</a> • <a class="underline" href="#" target="_blank" rel="noopener">LinkedIn</a> • <a class="underline" href="#" target="_blank" rel="noopener">YouTube</a></p>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="mt-auto border-t border-neutral-200 dark:border-neutral-800 py-8">
+      <div class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8 text-sm flex flex-col sm:flex-row items-center justify-between gap-2">
+        <p>© <span id="year"></span> Brandon Bailey</p>
+        <p class="text-neutral-500">Built with Tailwind • Deployed on GitHub Pages / Vercel</p>
+      </div>
+    </footer>
+  </div>
+
+  <!-- Floating Mini Audio Player -->
+  <div class="fixed bottom-4 right-4 z-[60]">
+    <div class="group backdrop-blur bg-white/80 dark:bg-neutral-900/80 border border-neutral-200 dark:border-neutral-800 shadow-xl rounded-2xl p-3 w-72 flex items-center gap-3">
+      <button id="audioToggle" class="shrink-0 rounded-xl border border-neutral-300 dark:border-neutral-700 px-3 py-1 text-xs hover:bg-neutral-100 dark:hover:bg-neutral-800 transition">Play</button>
+      <div class="min-w-0 flex-1">
+        <div class="text-xs text-neutral-500">Site music</div>
+        <div class="text-sm truncate" id="audioTitle">/assets/track.mp3</div>
+        <input id="audioSeek" type="range" min="0" max="100" value="0" class="w-full mt-1 accent-neutral-600" />
+      </div>
+      <input id="audioVolume" type="range" min="0" max="1" step="0.01" class="w-16 accent-neutral-600" />
+    </div>
+  </div>
+
+  <audio id="siteAudio" src="/assets/track.mp3" preload="metadata" loop></audio>
+
+  <script>
+    // Respect reduced motion
+    const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+    // View Transitions API (theme + hash nav)
+    const withTransition = (fn) => {
+      if (document.startViewTransition && !reduceMotion) {
+        document.startViewTransition(fn);
+      } else { fn(); }
+    };
+
+    // Smooth hash navigation with view transitions
+    document.querySelectorAll('a[href^="#"]').forEach(a => {
+      a.addEventListener('click', (e) => {
+        const href = a.getAttribute('href');
+        const target = document.querySelector(href);
+        if (!target) return;
+        e.preventDefault();
+        withTransition(() => target.scrollIntoView({ behavior: reduceMotion ? 'auto' : 'smooth', block: 'start' }));
+        history.pushState(null, '', href);
+      });
+    });
+
+    // Reveal on scroll
+    const toReveal = document.querySelectorAll('[data-animate]');
+    const reveal = (el) => { el.classList.add('reveal'); };
+
+    if (!reduceMotion) {
+      const io = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('animate-in');
+            io.unobserve(entry.target);
+          }
+        });
+      }, { rootMargin: '0px 0px -10% 0px', threshold: 0.05 });
+      toReveal.forEach((el) => io.observe(el));
+    }
+
+    // Theme Toggle (kept, wrapped in transition)
+    const themeToggle = document.getElementById('themeToggle');
+    const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+    const saved = localStorage.getItem('theme');
+    if (saved === 'dark' || (!saved && prefersDark)) {
+      document.documentElement.classList.add('dark');
+    }
+    themeToggle.addEventListener('click', () => {
+      withTransition(() => {
+        document.documentElement.classList.toggle('dark');
+        const isDark = document.documentElement.classList.contains('dark');
+        localStorage.setItem('theme', isDark ? 'dark' : 'light');
+      });
+    });
+
+    // Audio Player
+    const audio = document.getElementById('siteAudio');
+    const toggleBtn = document.getElementById('audioToggle');
+    const seek = document.getElementById('audioSeek');
+    const vol = document.getElementById('audioVolume');
+
+    // Restore volume
+    const savedVol = localStorage.getItem('siteAudioVol');
+    audio.volume = savedVol ? parseFloat(savedVol) : 0.25;
+    vol.value = audio.volume;
+
+    toggleBtn.addEventListener('click', async () => {
+      try {
+        if (audio.paused) {
+          await audio.play();
+          toggleBtn.textContent = 'Pause';
+        } else {
+          audio.pause();
+          toggleBtn.textContent = 'Play';
+        }
+      } catch (e) {
+        console.warn('Playback blocked until user gesture.', e);
+      }
+    });
+
+    vol.addEventListener('input', () => {
+      audio.volume = parseFloat(vol.value);
+      localStorage.setItem('siteAudioVol', audio.volume);
+    });
+
+    audio.addEventListener('timeupdate', () => {
+      if (!audio.duration || isNaN(audio.duration)) return;
+      seek.value = Math.floor((audio.currentTime / audio.duration) * 100);
+    });
+
+    seek.addEventListener('input', () => {
+      if (!audio.duration || isNaN(audio.duration)) return;
+      audio.currentTime = (parseInt(seek.value, 10) / 100) * audio.duration;
+    });
+
+    // Media Session (nice OS-level controls)
+    if ('mediaSession' in navigator) {
+      navigator.mediaSession.metadata = new MediaMetadata({
+        title: 'Site music', artist: 'Brandon Bailey', album: 'Personal Site', artwork: []
+      });
+      navigator.mediaSession.setActionHandler('play', () => audio.play());
+      navigator.mediaSession.setActionHandler('pause', () => audio.pause());
+      navigator.mediaSession.setActionHandler('seekto', (e) => { audio.currentTime = e.seekTime || 0; });
+    }
+
+    // Footer year (kept)
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+
+  <style>
+    /* Keyframes & animation helpers */
+    @keyframes float { 0% { transform: translateY(0) } 50% { transform: translateY(-6px) } 100% { transform: translateY(0) } }
+    .animate-float { animation: float 6s ease-in-out infinite; }
+
+    @keyframes fadeUp { from { opacity: 0; transform: translateY(12px); } to { opacity: 1; transform: translateY(0); } }
+    .animate-in { animation: fadeUp 600ms var(--ease, cubic-bezier(.16,1,.3,1)) both; }
+
+    /* Reduce motion respect */
+    @media (prefers-reduced-motion: reduce) {
+      .animate-float, .animate-in { animation: none !important; }
+    }
+  </style>
+</body>
+</html>
