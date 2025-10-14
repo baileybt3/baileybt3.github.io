@@ -154,7 +154,12 @@
         </article>
 
 		<!-- RLCS Outcome Model -->
-        <article class="rounded-2xl border border-neutral-200 dark:border-neutral-800 p-5 hover:shadow-lg transition bg-white dark:bg-neutral-950">
+        <article class="relative overflow-hidden rounded-2xl border border-neutral-800 hover:shadow-lg transition">          
+          <!-- Background GIF -->
+          <img src="/assets/gifs/rlcs-demo.gif"
+              alt=""
+              class="absolute inset-0 w-full h-full object-cover opacity-25" />
+
           <div class="text-xs text-neutral-500">Python / ML</div>
           <h4 class="mt-1 text-lg font-semibold">RLCS Outcome Model</h4>
           <p class="mt-2 text-sm text-neutral-600 dark:text-neutral-300">Logistic regression on Rocket League match data. Train/validate/test across 2022–2024.</p>
