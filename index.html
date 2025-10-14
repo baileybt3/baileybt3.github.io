@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" class = "dark">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -53,7 +53,6 @@
           <a href="#contact" class="hover:opacity-80">Contact</a>
         </div>
         <div class="flex items-center gap-2">
-          <button id="themeToggle" class="rounded-xl border border-neutral-300 dark:border-neutral-700 px-3 py-1 text-xs hover:bg-neutral-100 dark:hover:bg-neutral-800 transition">Change Theme</button>
           <a href="/rss.xml" class="hidden sm:inline rounded-xl border border-neutral-300 dark:border-neutral-700 px-3 py-1 text-xs hover:bg-neutral-100 dark:hover:bg-neutral-800 transition">RSS</a>
         </div>
       </nav>
@@ -261,7 +260,7 @@
     <section id="about" data-animate class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8 py-10">
       <h3 class="text-2xl font-bold">About</h3>
       <div class="mt-4 prose prose-neutral dark:prose-invert">
-        <p>Hi! I’m Brandon, a CS senior graduating Dec 2025. I build game systems, AI bots, and small tools that make streams and dev workflows more fun. I write short blog posts about my projects. I hope you enjoy.</p>
+        <p>Hi! I’m Brandon, a CS senior graduating Dec 2025. I build game systems, AI bots, and small tools that make streams and dev workflows more fun. I write short blog posts about my projects, I hope you enjoy.</p>
         <p>Currently reading: <em>C# 13 and .NET 9</em>. Training plan: daily code + Rocket League drills. 🎯</p>
       </div>
     </section>
@@ -337,24 +336,6 @@
       }, { rootMargin: '0px 0px -10% 0px', threshold: 0.05 });
       toReveal.forEach((el) => io.observe(el));
     }
-
-    // Theme Toggle (kept, wrapped in transition)
-    const themeToggle = document.getElementById('themeToggle');
-    const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-    const saved = localStorage.getItem('theme');
-    if (saved) {
-      document.documentElement.classList.toggle('dark', saved === 'dark');
-    } else {
-    document.documentElement.classList.toggle('dark', prefersDark);
-    }
-    themeToggle.addEventListener('click', () => {
-      withTransition(() => {
-        const html = document.documentElement;
-        const  isNowDark = !html.classList.contains('dark');
-        html.classList.toggle('dark', isNowDark);
-        localStorage.setItem('theme', isNowDark ? 'dark' : 'light');
-      });
-    });
 
     // Audio Player
     const audio = document.getElementById('siteAudio');
