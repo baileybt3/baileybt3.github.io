@@ -9,13 +9,4 @@
 <br>
 I wanted to try and improve the camera's functionality somehow. I first thought about just adding a bunch of camera to get all of the angles, but that felt very tedious and I wanted to make the stream feel more dynamic. I decided to add functionality to the cameras so they followed the bomb carrier. In my first pass, the bomb followed the carrier well and looked much more enjoyable to watch.
 <br>
-I ran into an issue of the camera switching to a camera that couldn't actually see the bomb carrier. This is because I was just checking the distance between the bomb and each camera. This didn't work well because occasionally the camera would be closer through a wall so you couldn't even see what was happening. This was fixed by adding a check to see if the bomb carrier is actually viewable. This turned out pretty good and I believe it is much more enjoyable to watch.
-<figure class="my-6 w-full max-w-3xl mx-auto">
-  <video controls playsinline preload="metadata" class="w-full rounded-lg shadow">
-    <!-- Add a WebM for broader compatibility if you can export one -->
-    <source src="/assets/videos/cs-ai-bots/cameraFollow.webm" type="video/webm">
-    <source src="/assets/videos/cs-ai-bots/cameraFollow.mp4" type="video/mp4">
-    Your browser does not support the video tag.
-  </video>
-  <figcaption class="mt-2 text-sm text-gray-500">Clip - Working Camera Follow</figcaption>
-</figure>  </div> </article> <footer class="mt-auto border-t border-neutral-200 dark:border-neutral-800 py-8"> <div class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8 text-sm flex flex-col sm:flex-row items-center justify-between gap-2"> <p>© <span id="year"></span> Brandon Bailey</p> <p class="text-neutral-500">Built with Astro + Tailwind • Deployed on GitHub Pages/Vercel</p> </div> </footer>  <script src="/scripts/site.js" defer></script> </body> </html>
+I ran into an issue of the camera switching to a camera that couldn't actually see the bomb carrier. This is because I was just checking the distance between the bomb and each camera. This didn't work well because occasionally the camera would be closer through a wall so you couldn't even see what was happening. This was fixed by adding a check to see if the bomb carrier is actually viewable. This turned out pretty good and I believe it is much more enjoyable to watch.  </div> </article> <footer class="mt-auto border-t border-neutral-200 dark:border-neutral-800 py-8"> <div class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8 text-sm flex flex-col sm:flex-row items-center justify-between gap-2"> <p>© <span id="year"></span> Brandon Bailey</p> <p class="text-neutral-500">Built with Astro + Tailwind • Deployed on GitHub Pages/Vercel</p> </div> </footer>  <script src="/scripts/site.js" defer></script> </body> </html>
